@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Resueltos</title>
+    <link rel="stylesheet" href="css/stilos.css">
+</head>
+<body>
+    <header>
+        <h1>DESAFIO 1 JAVASCRIPT</h1>
+    </header>
+    <nav>
+        <a href="#ejercicio-6">Ejercicio 6</a>
+        <a href="#ejercicio-7">Ejercicio 7</a>
+        <a href="#ejercicio-8">Ejercicio 8</a>
+        <a href="#ejercicio-9">Ejercicio 9</a>
+        <a href="#ejercicio-10">Ejercicio 10</a>
+    </nav>
+    <section id="ejercicio-6">
+        <h2>Ejercicio 6</h2>
+        <p>Defina la variable z:</p>
+        <form>
+            <label for="numeroz">Ingrese valor de z:</label>
+            <input type="number" id="numeroz" name="numeroz">
+            <button type="button" onclick="calcularResultadosz()">Obtener Valor</button>
+        </form>
+        <p>(a) (0.4 * z**4) + (3.1 * z**2) - (162.3 * z) - 80.7
+        <div class="solution">
+            Resultado:<p id="resultado6ha"></p>
+        </div>
+        <p>(b) (z**3 - 23) / (Math.pow(z**2 + 17.5,1/3))</p>
+        <div class="solution">
+            Resultado:<p id="resultado6hb"></p>
+        </div>
+    </section>
+    <script>
+       let z;
+
+    function calcularResultadosz() {
+        const inputElemento = document.getElementById("numeroz");
+        const valorDelInput = inputElemento.value;
+        z = parseFloat(valorDelInput);
+
+        const resultado6a = (0.4 * z**4) + (3.1 * z**2) - (162.3 * z) - 80.7;
+        document.getElementById("resultado6ha").textContent = resultado6a;
+
+        const resultado6b = (Math.pow(z, 3) - 23) / Math.pow(z**2 + 17.5, 1/3);
+        document.getElementById("resultado6hb").textContent = resultado6b;
+    }
+    </script>
+    <section id="ejercicio-7">
+        <h2>Ejercicio 7</h2>
+        <p>Define la variable t</p>
+        <form id="miFormulariot">
+            <label for="numerot">Ingrese valor de t:</label>
+            <input type="number" id="numerot" name="numerot">
+            <button type="button" onclick="calcularResultadost()">Obtener Valor</button>
+        </form>
+        <p>(a) (1/2)*epsilon**(2*t)-3.81*t**3</p>
+        <div class="solution">
+            Resultado: <p id="resultado7ha"></p>
+        </div>
+        <p>(b) (6*t**2+6*t-2)/(t**2-1)</p>
+        <div class="solution">
+            Resultado: <p id="resultado7hb"></p>
+        </div>
+    </section>
+    <script>
+        let t;
+         function calcularResultadost() {
+            const inputElemento = document.getElementById("numerot");
+            const valorDelInput = inputElemento.value;
+            t = parseFloat(valorDelInput);
+            const epsilon = 2.718281828;
+            const resultado7a=(1/2)*epsilon**(2*t)-3.81*t**3;
+            const resultado7b=(6*t**2+6*t-2)/(t**2-1);
+            document.getElementById("resultado7ha").innerHTML = resultado7a;
+            document.getElementById("resultado7hb").innerHTML = resultado7b;
+         }
+    </script>
+    <section id="ejercicio-8">
+    <h2>Ejercicio 8</h2>
+    <p>Define las variables x , y; luego evalúa:</p>
+    <form id="miFormularioxy">
+        <label for="numerox">Ingrese valor de x:</label>
+        <input type="number" id="numerox" name="numerox"><br><br>
+        <label for="numeroy">Ingrese valor de y:</label>
+        <input type="number" id="numeroy" name="numeroy"><br><br>
+        <button type="button" onclick="calcularResultadosxy()">Calcular Resultados</button>
+    </form>
+    <p>(a) $( (x^2 + y^2)^{2/3} ) + \frac{x \cdot y}{y - x}$</p>
+    <div class="solution">
+        Resultado: <p id="resultado8ha"></p>
+    </div>
+    <p>(b) $\frac{\sqrt{x + y}}{(x - y)^2} + 2 \cdot x^2 - x \cdot y^2$</p>
+    <div class="solution">
+        Resultado: <p id="resultado8hb"></p>
+    </div>
+</section>
+<script>
+    let x;
+    let y;
+
+    function calcularResultadosxy() {
+        const inputElementoX = document.getElementById("numerox");
+        const valorDelInputX = inputElementoX.value;
+        x = parseFloat(valorDelInputX);
+
+        const inputElementoY = document.getElementById("numeroy");
+        const valorDelInputY = inputElementoY.value;
+        y = parseFloat(valorDelInputY);
+
+        const resultado8a = (Math.pow(x**2 + y**2, 2/3)) + (x * y) / (y - x);
+        const resultado8b = Math.sqrt(x + y) / Math.pow(x - y, 2) + 2 * Math.pow(x, 2) - x * Math.pow(y, 2);
+
+        document.getElementById("resultado8ha").textContent = resultado8a;
+        document.getElementById("resultado8hb").textContent = resultado8b;
+    }
+</script>
+    <section id="ejercicio-9">
+    <h2>Ejercicio 9</h2>
+    <p>Define las variables c, d, a = cd² y b = (c+a)/c-d; luego evalúa:</p>
+    <form id="miFormulariocd">
+        <label for="numeroc">Ingrese valor de c :</label>
+        <input type="number" id="numeroc" name="numeroc"><br><br>
+        <label for="numerod">Ingrese valor de d:</label>
+        <input type="number" id="numerod" name="numerod"><br><br>
+        <button type="button" onclick="calcularResultadoscd()">Calcular Resultados</button>
+    </form>
+    <p>(a) $\epsilon^{d-b} + \sqrt[3]{c+a} - (c \cdot a)^d$</p>
+    <div class="solution">
+        Resultado: <p id="resultado9ha"></p>
+    </div>
+    <p>(b) $\frac{d}{c} + \left(\frac{c \cdot t}{b}\right)^2 - c^d - \frac{a}{b}$</p>
+    <div class="solution">
+        Resultado: <p id="resultado9hb"></p>
+    </div>
+</section>
+<script>
+    let c;
+    let d;
+    // Definimos un valor para epsilon (un número pequeño)
+    const epsilon = 1e-15;
+    // Debes definir un valor para t
+    const t1 = 2; // Por ejemplo, asignamos un valor de 2. Cámbialo si es diferente
+
+    function calcularResultadoscd() {
+        const inputElementoc = document.getElementById("numeroc");
+        const valorDelInputc = inputElementoc.value;
+        c = parseFloat(valorDelInputc);
+
+        const inputElementod = document.getElementById("numerod");
+        const valorDelInputd = inputElementod.value;
+        d = parseFloat(valorDelInputd);
+
+        const a = c * d**2;
+        const b = (c + a) / (c - d);
+
+        const resultado9a = Math.pow(epsilon, (d - b)) + Math.pow((c + a), 1/3) - Math.pow((c * a), d);
+        const resultado9b = (d / c) + Math.pow(((c * t1) / b), 2) - Math.pow(c, d) - (a / b);
+
+        document.getElementById("resultado9ha").textContent = resultado9a;
+        document.getElementById("resultado9hb").textContent = resultado9b;
+    }
+</script>
+    <section id="ejercicio-10">
+    <h2>Ejercicio 10</h2>
+    <p>Dos identidades trigonométricas están dadas por: x</p>
+    <form id="miFormularioñ">
+        <label for="numeroñ">Ingrese valor de x:</label>
+        <input type="number" id="numeroñ" name="numeroñ">
+        <button type="button" onclick="calcularResultadosñ()">Obtener Valor</button>
+    </form>
+    <p>(a) $\cos^2(\tilde{n}) - \sin^2(\tilde{n}) == 1 - 2 \cdot \sin^2(\tilde{n})$</p>
+    <div class="solution">
+        Resultado: <span id="resultado10hb"></span> == <span id="resultado10hb2"></span>
+        <p id="resultado10har"></p>
+    </div>
+    <p>(b) $\frac{\tan(\tilde{n})}{\sin(\tilde{n}) - 2 \cdot \tan(\tilde{n})} == \frac{1}{\cos(\tilde{n}) - 2}$</p>
+    <div class="solution">
+        Resultado: <span id="resultado10ha"></span> == <span id="resultado10ha2"></span>
+        <p id="resultado10hbr"></p>
+    </div>
+</section>
+<script>
+    let ñ;
+    function calcularResultadosñ() {
+        const inputElementoñ = document.getElementById("numeroñ");
+        const valorDelInputñ = inputElementoñ.value;
+        ñ = parseFloat(valorDelInputñ);
+
+        // Identidad (a)
+        const resultado10a_izq = Math.pow(Math.cos(ñ), 2) - Math.pow(Math.sin(ñ), 2);
+        document.getElementById("resultado10hb").textContent = resultado10a_izq.toFixed(5);
+        const resultado10a_der = 1 - 2 * (Math.pow(Math.sin(ñ), 2));
+        document.getElementById("resultado10hb2").textContent = resultado10a_der.toFixed(5);
+        if (Math.abs(resultado10a_izq - resultado10a_der) < 1e-9) { // Usamos una tolerancia para comparar decimales
+            document.getElementById("resultado10har").textContent = "La identidad (a) es correcta";
+        } else {
+            document.getElementById("resultado10har").textContent = "La identidad (a) no es correcta";
+        }
+
+        // Identidad (b)
+        const resultado10b_izq = Math.tan(ñ) / (Math.sin(ñ) - 2 * Math.tan(ñ));
+        document.getElementById("resultado10ha").textContent = resultado10b_izq.toFixed(5);
+        const resultado10b_der = 1 / (Math.cos(ñ) - 2);
+        document.getElementById("resultado10ha2").textContent = resultado10b_der.toFixed(5);
+        if (Math.abs(resultado10b_izq - resultado10b_der) < 1e-9) { // Usamos una tolerancia para comparar decimales
+            document.getElementById("resultado10hbr").textContent = "La identidad (b) es correcta";
+        } else {
+            document.getElementById("resultado10hbr").textContent = "La identidad (b) no es correcta";
+        }
+    }
+</script>
+    <footer>
+        <p>&copy;Ejercicios Resueltos</p>
+    </footer>
+</body>
+</html>
